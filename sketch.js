@@ -1,21 +1,19 @@
-var conveyorBelt = [];
+var bugs = [];
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
   for (var i = 0; i < 100; i++) {
-    conveyorBelt[i] = {
+    bugs[i] = {
       x: random(0, width),
       y: random(0, height),
       display: function() {
           noStroke();
-          fill('#B6032A');
-          rect(10+this.x, 20+this.y, 60, 35);
-          fill('#FFFDF8');
-          ellipse(40+this.x,20+this.y,60, 20);
-          rect(10+this.x, 55+this.y, 60, 35);
-          ellipse(40+this.x,90+this.y,60, 20);
-          fill('#B6032A');
-          ellipse(40+this.x,55+this.y,60, 20);
+            noStroke();
+            fill('#000000');
+            ellipse(60+this.x,50+this.y,70, 70);
+            ellipse(20+this.x,70+this.y,30, 30);
+            fill('#B6032A');
+            arc(60+this.x, 50+this.y, 80, 80, 0, PI+HALF_PI+QUARTER_PI, PIE);
           
          
       },
@@ -32,14 +30,11 @@ function setup() {
 
 function draw() {
   background(204);
-  for (var i = 0; i < conveyorBelt.length; i++) {
-    conveyorBelt[i].display();
-    conveyorBelt[i].move();
+  for (var i = 0; i < bugs.length; i++) {
+    bugs[i].display();
+    bugs[i].move();
    
   }
 }
 
-function mousePressed() {
-  conveyorBelt.push(0);
-}
 
